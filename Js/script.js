@@ -7,14 +7,56 @@ let minute = 0;
 let second = 0;
 let count = 0;
 
+//Multiplication problem generator
+
+const cardContainer = document.getElementById('card-container');
+
+function generateProblems(numProblems) {
+    cardContainer.innerHTML = ''; // Clear previous cards
+    
+    for (let i = 0; i < numProblems; i++) {
+        const num1 = Math.floor(Math.random() * 12) + 1;
+        const num2 = Math.floor(Math.random() * 12) + 1;
+        const answer = num1 * num2;
+
+        // Create card elements
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const cardInner = document.createElement('div');
+        cardInner.classList.add('card-inner');
+
+        const cardFront = document.createElement('div');
+        cardFront.classList.add('card-front');
+        cardFront.textContent = `${num1} x ${num2}`;
+
+        const cardBack = document.createElement('div');
+        cardBack.classList.add('card-back');
+        cardBack.textContent = `${answer}`;
+
+        // Append elements to card
+        cardInner.appendChild(cardFront);
+        cardInner.appendChild(cardBack);
+        card.appendChild(cardInner);
+        cardContainer.appendChild(card);
+
+        // Add click event to flip the card
+        cardInner.addEventListener('click', () => {
+            cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
+        });
+    }
+
+
+}
+
 start.addEventListener('click', function () {
     timer = true;
     stopWatch();
 });
 
-stopBtn.addEventListener('click', function () {
-    timer = false;
-});
+// stopBtn.addEventListener('click', function () {
+//     timer = false;
+// });
 
 resetBtn.addEventListener('click', function () {
     timer = false;
@@ -24,8 +66,13 @@ resetBtn.addEventListener('click', function () {
     document.getElementById('min').innerHTML = "00";
     document.getElementById('sec').innerHTML = "00";
     document.getElementById('count').innerHTML = "00";
-    location.reload();
+    // location.reload();
+    generateProblems(24);
 });
+
+generateProblems(24);
+
+
 
 function stopWatch() {
     if (timer) {
