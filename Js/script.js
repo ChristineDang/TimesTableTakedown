@@ -6,14 +6,17 @@ let card = document.getElementById('card');
 let minute = 0;
 let second = 0;
 let count = 0;
+let flippedCount = 0; // Counter for flipped cards
+const totalCards = 24; // Total number of cards
+let timer = false; // Timer state
 
-//Multiplication problem generator
-
+// Multiplication problem generator
 const cardContainer = document.getElementById('card-container');
 
 function generateProblems(numProblems) {
     cardContainer.innerHTML = ''; // Clear previous cards
-    
+    flippedCount = 0; // Reset the flipped count for new game
+
     for (let i = 0; i < numProblems; i++) {
         const num1 = Math.floor(Math.random() * 12) + 1;
         const num2 = Math.floor(Math.random() * 12) + 1;
@@ -43,10 +46,20 @@ function generateProblems(numProblems) {
         // Add click event to flip the card
         cardInner.addEventListener('click', () => {
             cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
+            flippedCount++; // Increment the flipped count
+
+            // Start the timer only on the first card click
+            if (!timer) {
+                timer = true; // Set timer state to true
+                stopWatch(); // Start the timer
+            }
+
+            // Stop the timer if all cards have been flipped
+            if (flippedCount === totalCards) {
+                timer = false; // Stop the timer
+            }
         });
     }
-
-
 }
 
 start.addEventListener('click', function () {
@@ -54,25 +67,23 @@ start.addEventListener('click', function () {
     stopWatch();
 });
 
-// stopBtn.addEventListener('click', function () {
-//     timer = false;
-// });
+stopBtn.addEventListener('click', function () {
+    timer = false;
+});
 
 resetBtn.addEventListener('click', function () {
     timer = false;
     minute = 0;
     second = 0;
     count = 0;
+    flippedCount = 0; // Reset flipped count
     document.getElementById('min').innerHTML = "00";
     document.getElementById('sec').innerHTML = "00";
     document.getElementById('count').innerHTML = "00";
-    // location.reload();
-    generateProblems(24);
+    generateProblems(24); // Generate new problems
 });
 
 generateProblems(24);
-
-
 
 function stopWatch() {
     if (timer) {
@@ -109,11 +120,4 @@ function stopWatch() {
         document.getElementById('count').innerHTML = countString;
         setTimeout(stopWatch, 10);
     }
-}
-
-// Card functions
-
-function flipCard(card) {
-    const cardInner = card.querySelector('.card-inner');
-    cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
 }
