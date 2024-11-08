@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Speed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #answer {
+            font-size: 20px;
+            padding: 10px;
+        }
+        #submit {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+        }
+        #finalResult {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #timer {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiplication Speed Test</h1>
+    <p>Answer all 20 questions correctly as quickly as possible!</p>
+    
+    <div id="question"></div>
+    <input type="number" id="answer" placeholder="Your answer" autofocus>
+    <button id="submit">Submit Answer</button>
+    
+    <div id="result"></div>
+    <div id="finalResult"></div>
+    
+    <label for="showTimer">Show Timer</label>
+    <input type="checkbox" id="showTimer" checked> <!-- Default is checked -->
+
+    <div id="timer" style="display: none;">Time: <span id="timerDisplay">0.00</span> seconds</div> <!-- Timer initially hidden -->
+
+    <script src="../../Js/speedTest.js"></script>
+</body>
+</html>

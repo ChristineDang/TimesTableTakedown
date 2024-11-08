@@ -2,6 +2,8 @@ body {
     /* padding: 0;
     margin: 0; */
     font-family: verdana;
+    text-align: center;
+    /* background-image: url("../flat-design-whiteboard-in-wooden-cabinet-background-free-vector.jpg"); */
 }
 
 #timerSection{
@@ -60,11 +62,6 @@ body {
 }
 
 /* timer */
-
-h1 {
-    color: rgb(10, 238, 10);
-    text-align: center;
-}
 
 .digit {
     font-size: 60px;

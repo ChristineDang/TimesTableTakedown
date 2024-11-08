@@ -1,7 +1,7 @@
 let start = document.getElementById('start');
 let stopBtn = document.getElementById('stop');
 let resetBtn = document.getElementById('reset');
-let card = document.getElementById('card');
+let cardContainer = document.getElementById('card-container');
 
 let minute = 0;
 let second = 0;
@@ -11,8 +11,6 @@ const totalCards = 24; // Total number of cards
 let timer = false; // Timer state
 
 // Multiplication problem generator
-const cardContainer = document.getElementById('card-container');
-
 function generateProblems(numProblems) {
     cardContainer.innerHTML = ''; // Clear previous cards
     flippedCount = 0; // Reset the flipped count for new game
@@ -43,20 +41,26 @@ function generateProblems(numProblems) {
         card.appendChild(cardInner);
         cardContainer.appendChild(card);
 
+        // Add a flipped state to the cardInner
+        let isFlipped = false;
+
         // Add click event to flip the card
         cardInner.addEventListener('click', () => {
-            cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
-            flippedCount++; // Increment the flipped count
+            if (!isFlipped) { // Check if the card is already flipped
+                cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? '' : 'rotateY(180deg)';
+                isFlipped = true; // Mark the card as flipped
+                flippedCount++; // Increment the flipped count
 
-            // Start the timer only on the first card click
-            if (!timer) {
-                timer = true; // Set timer state to true
-                stopWatch(); // Start the timer
-            }
+                // Start the timer only on the first card click
+                if (!timer) {
+                    timer = true; // Set timer state to true
+                    stopWatch(); // Start the timer
+                }
 
-            // Stop the timer if all cards have been flipped
-            if (flippedCount === totalCards) {
-                timer = false; // Stop the timer
+                // Stop the timer if all cards have been flipped
+                if (flippedCount === totalCards) {
+                    timer = false; // Stop the timer
+                }
             }
         });
     }
