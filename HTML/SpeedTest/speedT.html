@@ -4,38 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiplication Speed Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        #question {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        #answer {
-            font-size: 20px;
-            padding: 10px;
-        }
-        #submit {
-            font-size: 18px;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        #result {
-            margin-top: 20px;
-        }
-        #finalResult {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        #timer {
-            font-size: 18px;
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/SpeedT.css"> 
+    
 </head>
+
+<header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Times Table Takedown</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="../../index.html">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
 <body>
     <h1>Multiplication Speed Test</h1>
     <p>Answer all 20 questions correctly as quickly as possible!</p>
@@ -52,6 +38,15 @@
 
     <div id="timer" style="display: none;">Time: <span id="timerDisplay">0.00</span> seconds</div> <!-- Timer initially hidden -->
 
+
+    <footer>
+        <!-- Copyright -->
+       <div class="footer-copyright text-center py-3">Copyright © 2024 Christine Dang | All Rights Reserved
+   </footer>
+
     <script src="../../Js/speedTest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 </html>

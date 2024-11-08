@@ -2,7 +2,7 @@
 <html lang="en-us">
     <head>
         <meta charset="utf-8">
-        <title>Christine Dang</title>
+        <title>Times Table Takedown</title>
         <!-- Link to style.css-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="CSS/homepage.css"> 
@@ -16,67 +16,39 @@
                 <a class="navbar-brand" href="#">Times Table Takedown</a>
               </div>
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="index.html">Home</a></li>
               </ul>
             </div>
           </nav>
         </header>
 
-
-      <div class="container" id="timerSection">
-              <div id="time">
-                  <span class="digit" id="min">
-                      00</span>
-                  <span class="txt">Min</span>
-                  <span class="digit" id="sec">
-                      00</span>
-                  <span class="txt">Sec</span>
-                  <span class="digit" id="count">
-                      00</span>
-              </div>
-              <div id="buttons">
-                  <button class="btn" id="reset">
-                      Restart</button>
-              </div>
-      </div>
-
-      <br>
-
-      <div class="card-container" id="card-container">
-        <!--row 1-->
-        <div class="row">
-          <div class="col-md-12"  id="start">
-            <div class="card" onclick="flipCard(this)">
-                <div class="card-inner">
-                  <div class="card-front">
-                      <h2 id="question"></h2>
-                  </div>
-                  <div class="card-back">
-                      <h2 id="result"></h2>
-                  </div>
-              </div>
-            </div>
+        <div class="card" style="width:400px">
+          <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image"> -->
+          <div class="card-body" href="html/Practice/timedPractice.html">
+            <h4 class="card-title">Multiplication Timed Practice</h4>
+            <p class="card-text">Flip the cards after answering them to check and see how quickly you can solve 
+              24 questions!</p>
+            <a href="html/Practice/timedPractice.html" class="btn btn-primary">See Profile</a>
           </div>
-        </div>       
-      </div>
+        </div>
 
-      <div class="card-container" id="card-container"></div>
-          <div class="colum-lg-2">
-            <div id="stop"></div>
+        <div class="card" style="width:400px">
+          <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image"> -->
+          <div class="card-body" href="html/SpeedTest/speedT.html">
+            <h4 class="card-title">Multiplication Timed Test</h4>
+            <p class="card-text">Flip the cards after answering 20 questions and see how quickly you can solve 
+              24 questions!</p>
+            <a href="html/SpeedTest/speedT.html" class="btn btn-primary">See Profile</a>
           </div>
-
-        <br>
+        </div>
 
 
       </div>
           <script src="Js/script.js"></script>
 
-
+<footer>
      <!-- Copyright -->
     <div class="footer-copyright text-center py-3">Copyright © 2024 Christine Dang | All Rights Reserved
-
-     <!-- Copyright -->
-
 </footer>
 <!-- Footer -->           
     </body>

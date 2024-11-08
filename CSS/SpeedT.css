@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+#question {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+#answer {
+    font-size: 20px;
+    padding: 10px;
+}
+#submit {
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+#result {
+    margin-top: 20px;
+}
+#finalResult {
+    font-size: 20px;
+    font-weight: bold;
+}
+#timer {
+    font-size: 18px;
+    margin-top: 10px;
+}
