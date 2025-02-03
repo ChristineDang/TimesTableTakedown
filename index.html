@@ -22,48 +22,223 @@
           </nav>
         </header>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card" style="width:400px">
-                <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image"> -->
-                <div class="card-body" href="html/Practice/timedPractice.html">
-                  <h4 class="card-title">Multiplication Timed Practice</h4>
-                  <p class="card-text">Flip the cards after answering them to check and see how quickly you can solve 
-                    24 questions!</p>
-                  <a href="./HTML/Practice/timedPractice.html" class="btn btn-primary">See Profile</a>
-                </div>
-              </div>
-            </div>
+        <div class="banner"></div>
 
-            <div class="col-md-6>">
-              <div class="card" style="width:400px">
+        <div class="container-fluid" id="bodyContainer">
+          <!-- <br>
+          <br>
+          <div class="row">
+            <div class="col-md-12">
+              <h1> Welcome to Times Table Takedown!</h1>
+              <p>Play games to see how quickly you can solve multiplication problems</p>
+            </div>
+          </div> -->
+
+          <br>
+
+          <div class="row">
+
+            <div class="col-md-6">
+              <h2>Beginner</h2>
+              <!-- <p>First time learning the times tables? Select a game mode to start learning at a chill pace!</p> -->
+
+              <br>
+
+              <a class="card" id="flipCard" href="./HTML/Practice/Practice.html">
+                    <div class="card-body">
+                      <!-- <h4 class="card-title">Flip Cards</h4>
+                      <p class="card-text">Flip the cards after answering them to check your answers</p> -->
+                      <!-- <a href="./HTML/Practice/Practice.html" class="btn btn-primary">Start Game</a> -->
+                    </div>
+              </a>
+
+              <br>
+
+              <a class="card" id="flipCard" href="./HTML/SpeedTest/speedT.html" style="height: 200px">
                 <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image"> -->
                 <div class="card-body" href="html/SpeedTest/speedT.html">
-                  <h4 class="card-title">Multiplication Timed Test</h4>
-                  <p class="card-text">Flip the cards after answering 20 questions and see how quickly you can solve 
+                  <h4 class="card-title">Timer Showdown</h4>
+                  <p class="card-text">Enter in answers consecutively and correctly to see how quickly 
+                    you can solve 20 questions!
+                  </p>
+                  <!-- <a href="./HTML/SpeedTest/speedT.html" class="btn btn-primary">Start Game</a> -->
+                </div>
+              </a>
+
+              <br>
+
+              <a class="card" id="flipCard" href="./HTML/SpeedTest/speedT.html" style="height: 200px">
+                <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image"> -->
+                <div class="card-body" href="html/SpeedTest/speedT.html">
+                  <h4 class="card-title">Timer Showdown</h4>
+                  <p class="card-text">Enter in answers consecutively and correctly to see how quickly 
+                    you can solve 20 questions!
+                  </p>
+                  <!-- <a href="./HTML/SpeedTest/speedT.html" class="btn btn-primary">Start Game</a> -->
+                </div>
+              </a>
+
+            </div>
+
+            <div class="col-md-6">
+              <h2>Advanced</h2>
+              <!-- <p>Ready to put your skills to the test? Select a game mode to see how well you know your times tables!</p> -->
+
+              <br>
+
+              <a class="card" id="flipCardRush" href="./HTML/Practice/timedPractice.html">
+                <div class="card-body" href="html/Practice/timedPractice.html">
+                  <!-- <h4 class="card-title">Flip Card Rush</h4>
+                  <p class="card-text">Flip the cards after answering them and see how quickly you can solve 
                     24 questions!</p>
-                  <a href="./HTML/SpeedTest/speedT.html" class="btn btn-primary">See Profile</a>
+                  <a href="./HTML/Practice/timedPractice.html" class="btn btn-primary">Start Game</a> -->
+                </div>
+              </a>
+
+              <br>
+
+              <div class="card" id="flipCard" style="height: 200px">
+                <div class="card-body" href="html/Practice/timedPractice.html">
+                  <h4 class="card-title">Rush Mode</h4>
+                  <p class="card-text">See how many questions you can answer within 1 minute!</p>
+                  <a href="./HTML/Practice/timedPractice.html" class="btn btn-primary">Start Game</a>
                 </div>
               </div>
+
+              <br>
+
+              <div class="card" id="flipCard" style="height: 200px">
+                <!-- <img class="card-img-top" src="img_avatar1.png" alt="Card image"> -->
+                <div class="card-body" href="html/SpeedTest/speedT.html">
+                  <h4 class="card-title">Timer Showdown</h4>
+                  <p class="card-text">Enter in answers consecutively and correctly to see how quickly 
+                    you can solve 20 questions!
+                  </p>
+                  <a href="./HTML/SpeedTest/speedT.html" class="btn btn-primary">Start Game</a>
+                </div>
+              </div>
+              
             </div>
-            </div>
+
           </div>
 
 
 
+
+
+
+
+
+
+
+
+          <!--Old Layout -->
+
+          <!-- <div class="row">
+            <div class="col-md-4">
+              <h2>Beginner</h2>
+              <p>First time learning multiplication? Select a game mode to start learning!</p>
+              <br>
+
+            </div>
+
+            <div class="col-md-4">
+              <div class="card" style="height: 200px">
+                <div class="card-body" href="html/Practice/timedPractice.html">
+                  <h4 class="card-title">Flip Cards</h4>
+                  <p class="card-text">Flip the cards after answering them to check your answers</p>
+                  <a href="./HTML/Practice/Practice.html" class="btn btn-primary">Start Game</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card" style="height: 200px">
+                <div class="card-body" href="html/SpeedTest/speedT.html">
+                  <h4 class="card-title">Multiplication Match</h4>
+                  <p class="card-text">Match the multiplication equation cards to the right answers
+                  </p>
+                  <a href="./HTML/SpeedTest/speedT.html" class="btn btn-primary">Start Game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="row">
+            <div class="col-md-4">
+              <h2>Next Level</h2>
+              <p>Ready to put your skills to the test? Select a game mode to see how well you know your times tables!</p>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card" style="height: 200px">
+                <div class="card-body" href="html/Practice/timedPractice.html">
+                  <h4 class="card-title">Flip Card Rush</h4>
+                  <p class="card-text">Flip the cards after answering them and see how quickly you can solve 
+                    24 questions!</p>
+                  <a href="./HTML/Practice/timedPractice.html" class="btn btn-primary">Start Game</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card" style="height: 200px">
+                <div class="card-body" href="html/SpeedTest/speedT.html">
+                  <h4 class="card-title">Timer Showdown</h4>
+                  <p class="card-text">Enter in answers consecutively and correctly to see how quickly 
+                    you can solve 20 questions!
+                  </p>
+                  <a href="./HTML/SpeedTest/speedT.html" class="btn btn-primary">Start Game</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <br>
+
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <div class="card" style="height: 200px">
+                  <div class="card-body" href="html/Practice/timedPractice.html">
+                    <h4 class="card-title">Rush Mode</h4>
+                    <p class="card-text">See how many questions you can answer within 1 minute!</p>
+                    <a href="./HTML/Practice/timedPractice.html" class="btn btn-primary">Start Game</a>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-md-4">
+                <div class="card" style="height: 200px">
+                  <div class="card-body" href="html/SpeedTest/speedT.html">
+                    <h4 class="card-title">Top Secret Level</h4>
+                    <p class="card-text">The final boss of bosses. Do you dare enter the ultimate level?
+                    </p>
+                    <a href="./HTML/SpeedTest/speedT.html" class="btn btn-primary">Enter at your own risk</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div> -->
+
        
 
       </div>
-          <script src="Js/script.js"></script>
+
+      <br>
+      <br>
 
 <footer>
      <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">Copyright © 2024 Christine Dang | All Rights Reserved
+    <div class="footer-copyright text-center py-3">Copyright © 2025 Christine Dang | All Rights Reserved
 </footer>
 <!-- Footer -->           
     </body>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="Js/script.js"></script>
 </html>

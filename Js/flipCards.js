@@ -10,15 +10,6 @@ let flippedCount = 0; // Counter for flipped cards
 const totalCards = 24; // Total number of cards
 let timer = false; // Timer state
 
-//confetti
-function fire(ratio, opt) {
-    confetti(Object.assign({}, opt, {
-        origin: {y: .6},
-        particleCount: Math.floor(800 *
-            ratio)
-    }));
-}
-
 // Multiplication problem generator
 function generateProblems(numProblems) {
     cardContainer.innerHTML = ''; // Clear previous cards
@@ -69,27 +60,6 @@ function generateProblems(numProblems) {
                 // Stop the timer if all cards have been flipped
                 if (flippedCount === totalCards) {
                     timer = false; // Stop the timer
-
-                    fire(.25, {
-                        spread: 30,
-                        startVelocity: 60
-                    });
-                    fire(.2, {spread: 60});
-                    fire(.35, {
-                        spread: 200,
-                        decay: .9,
-                        scalar: 1
-                    });
-                    fire(.1, {
-                        spread: 260,
-                        startVelocity: 30,
-                        decay: .92,
-                        scalar: 1.2
-                    });
-                    fire(.2, {
-                        spread: 240,
-                        startVelocity: 45
-                    });
                 }
             }
         });
@@ -111,9 +81,9 @@ resetBtn.addEventListener('click', function () {
     second = 0;
     count = 0;
     flippedCount = 0; // Reset flipped count
-    document.getElementById('min').innerHTML = "00";
-    document.getElementById('sec').innerHTML = "00";
-    document.getElementById('count').innerHTML = "00";
+    // document.getElementById('min').innerHTML = "00";
+    // document.getElementById('sec').innerHTML = "00";
+    // document.getElementById('count').innerHTML = "00";
     generateProblems(24); // Generate new problems
 });
 
@@ -149,9 +119,9 @@ function stopWatch() {
             countString = "0" + countString;
         }
 
-        document.getElementById('min').innerHTML = minString;
-        document.getElementById('sec').innerHTML = secString;
-        document.getElementById('count').innerHTML = countString;
+        // document.getElementById('min').innerHTML = minString;
+        // document.getElementById('sec').innerHTML = secString;
+        // document.getElementById('count').innerHTML = countString;
         setTimeout(stopWatch, 10);
     }
 }

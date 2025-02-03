@@ -6,6 +6,21 @@ body {
     /* background-image: url("../flat-design-whiteboard-in-wooden-cabinet-background-free-vector.jpg"); */
 }
 
+html body {
+    background-image: url("../Images/Backgrounds/TTTBkgrndCF.png");
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px; */
+    /* overflow-x: hidden; */
+    /* display: grid; */
+    /* grid-template-rows: 1fr auto; */
+    
+}
+
 #timerSection{
     display: flex;
     flex-direction: column;
@@ -51,7 +66,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 32px;
+    font-weight: 600;
     border: 1px solid #ccc;
     border-radius: 10px;
     background: white;
@@ -89,7 +105,7 @@ body {
     font-size: 15px;
     transition: 0.5s;
     color: white;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 #reset {
