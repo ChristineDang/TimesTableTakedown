@@ -5,7 +5,7 @@ body {
     text-align: center;
 }
 
-.banner {
+/* .banner {
 background-image: url('../Images/TTTGameBanner.png');
     min-height: 500px;
     background-attachment: fixed; 
@@ -15,6 +15,17 @@ background-image: url('../Images/TTTGameBanner.png');
     background-position-x: center;
     background-position-y: top;
 
+} */
+
+.banner {
+    background-image: url('../Images/TTTGameBanner.png');
+    min-height: 650px;
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center; 
 }
 
 #bodyContainer {
@@ -23,19 +34,15 @@ background-image: url('../Images/TTTGameBanner.png');
     background-color: white;
 }
 
-#flipCard {
+/* #flipCard {
     background-image: url('../Images/TTTCardCF2.png');
-    /* background-attachment: fixed;  */
-    width: 600px;
-    height: 400px;
+    background-size: cover;
     box-shadow: 5px 5px rgba(0, 0, 0, 0.527)
 }
 
 #flipCardRush {
     background-image: url('../Images/TTTCardCFR.png');
-    /* background-attachment: fixed;  */
-    width: 600px;
-    height: 400px;
+    background-size: auto;
     box-shadow: 5px 5px rgba(0, 0, 0, 0.527)
 }
 
@@ -51,4 +58,98 @@ background-image: url('../Images/TTTGameBanner.png');
 .card:hover{
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+} */
+
+#bodyContainer {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: white;
 }
+
+#flipCard {
+    background-image: url('../Images/TTTCardCF2.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
+}
+
+#flipCardRush {
+    background-image: url('../Images/TTTCardCFR.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
+}
+
+#rushMode {
+    background-image: url('../Images/TTTCardRM.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
+}
+
+.card {
+    box-shadow: 0 12px 20px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    padding: 7px 5vw 9px 0px;
+    cursor: pointer;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 3 / 2;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px 3vw;
+    }
+
+    .banner {
+        background-size: cover;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+        max-width: 400px;
+        padding: 15px 5vw;
+    }
+
+    .banner {
+        background-size: cover; 
+        min-height: 300px;
+    }
+}
+
+/* For ultra-wide screens (3072px width) */
+@media (min-width: 3072px) {
+    .banner {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* For large screens (1920px and above) */
+@media (min-width: 1920px) and (max-width: 3071px) {
+    .banner {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* For smaller screens (less than 1920px) */
+@media (max-width: 1920px) {
+    .banner {
+        background-size: contain;
+        background-position: center center;
+    }
+}
+
