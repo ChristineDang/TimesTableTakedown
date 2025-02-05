@@ -15,6 +15,15 @@ let timerElement = document.getElementById("timer");
 let timerDisplay = document.getElementById("timerDisplay");
 let showTimerCheckbox = document.getElementById("showTimer");
 
+//confetti
+function fire(ratio, opt) {
+    confetti(Object.assign({}, opt, {
+        origin: {y: .6},
+        particleCount: Math.floor(800 *
+            ratio)
+    }));
+}
+
 // Function to generate a random multiplication question
 function generateQuestion() {
     let num1 = Math.floor(Math.random() * 10) + 1;
@@ -100,6 +109,27 @@ function endTest() {
     finalResultElement.innerHTML = `Time's up! You answered ${correctAnswers} questions correctly in 1 minute.`;
     submitButton.disabled = true;  // Disable the submit button
     answerElement.disabled = true;  // Disable the answer input
+
+    fire(.25, {
+        spread: 30,
+        startVelocity: 30
+    });
+    fire(.2, {spread: 30});
+    fire(.35, {
+        spread: 100,
+        decay: .9,
+        scalar: 1
+    });
+    fire(.1, {
+        spread: 140,
+        startVelocity: 15,
+        decay: .92,
+        scalar: 1.2
+    });
+    fire(.2, {
+        spread: 240,
+        startVelocity: 45
+    });
 }
 
 // Reset the game state

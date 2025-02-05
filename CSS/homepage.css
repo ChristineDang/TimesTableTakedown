@@ -80,17 +80,51 @@ background-image: url('../Images/TTTGameBanner.png');
     box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
 }
 
-#rushMode {
+/* #rushMode {
     background-image: url('../Images/TTTCardRM.png');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
+    background-color: rgb(16, 191, 234);
+    max-width: 600px;
+    max-height: 200px;
     box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
 }
 
 #timerShowdown {
     background-image: url('../Images/TTTCardTS.png');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
+    background-color: rgb(16, 191, 234);
+    max-width: 600px;
+    max-height: 200px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
+} */
+
+#rushMode {
+    background-image: url('../Images/TTTCardRM.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    max-height: none;
+    max-width: 600px;
+    aspect-ratio: 3 / 1; /* Adjusted to better fit the 600x200px shape */
+    background-color: rgb(16, 191, 234);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
+}
+
+#timerShowdown {
+    background-image: url('../Images/TTTCardTS.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    max-height: none;
+    max-width: 600px;
+    aspect-ratio: 3 / 1; /* Adjusted to better fit the 600x200px shape */
+    background-color: rgb(16, 191, 234);
     box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
 }
 
@@ -117,6 +151,12 @@ background-image: url('../Images/TTTGameBanner.png');
         padding: 10px 3vw;
     }
 
+    #rushMode,
+    #timerShowdown {
+        height: auto; /* Let it resize naturally */
+        max-height: none;
+    }
+
     .banner {
         background-size: cover;
         min-height: 400px;
@@ -125,9 +165,14 @@ background-image: url('../Images/TTTGameBanner.png');
 
 @media (max-width: 480px) {
     .card {
-        width: 100%;
-        max-width: 400px;
-        padding: 15px 5vw;
+        aspect-ratio: 16 / 9; /* Makes it slightly taller to fit images better */
+        padding: 10px 4vw;
+    }
+
+    #rushMode,
+    #timerShowdown {
+        height: auto; /* Let it resize naturally */
+        max-height: none;
     }
 
     .banner {
