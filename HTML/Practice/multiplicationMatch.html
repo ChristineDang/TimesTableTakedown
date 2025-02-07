@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Match</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../CSS/multiplicationMatch.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Times Table Takedown</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="../../index.html">Home</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+
+    <h1>Multiplication Card Match</h1>
+    <p>Match the correct answer card to the question card</p>
+    <div id="message"></div>
+    <div id="game-container">
+        <div id="cards-container">
+            <!-- Cards will be inserted here dynamically -->
+        </div>
+        <button id="reset-btn">Reset Game</button>
+    </div>
+
+    <div id="win-screen" class="win-overlay">
+        <div class="win-message">
+            <h1>🎉 You Won! 🎉</h1>
+            <p>Great job matching all the multiplication cards!</p>
+            <button id="play-again-btn">Play Again</button>
+        </div>
+    </div>
+
+    <!-- <canvas id="fireworks"></canvas> -->
+
+    
+
+    <script src="../../Js/multiplicationMatch.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</body>
+</html>
