@@ -1,7 +1,7 @@
 body {
     font-family: verdana;
     text-align: center;
-    background-color: rgb(155, 200, 255);
+    background-color: #00bde6;
 }
 
 /* .banner {
@@ -33,6 +33,12 @@ background-image: url('../Images/TTTGameBanner.png');
     /* background-image: url('../Images/TTTGameBanner.png'); */
 }
 
+.navbar {
+    padding: 0 5px; /* Adjust padding to reduce left/right space */
+    display: flex;
+    justify-content: space-between; /* Adjust alignment if necessary */
+}
+
 #homeBtn {
     background-image: url('../Images/Buttons/TTTHomeBtn.png');
     width: 60px;
@@ -48,31 +54,15 @@ background-image: url('../Images/TTTGameBanner.png');
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
-/* #flipCard {
-    background-image: url('../Images/TTTCardCF2.png');
-    background-size: cover;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.527)
+#navAppNameImg {
+    width: 200px;
+    height: auto;
 }
 
-#flipCardRush {
-    background-image: url('../Images/TTTCardCFR.png');
-    background-size: auto;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.527)
-}
-
-.card{
-    box-shadow: 0 12px 20px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-    padding: 7px 50px 9px 0px;
-    cursor: pointer;
-    width: 600px;
-    height: 400px;
-}
-
-.card:hover{
+#navAppNameImg:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-} */
+}
 
 #bodyContainer {
     padding-left: 5%;
@@ -100,28 +90,6 @@ background-image: url('../Images/TTTGameBanner.png');
     background-position: center;
     box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
 }
-
-/* #rushMode {
-    background-image: url('../Images/TTTCardRM.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgb(16, 191, 234);
-    max-width: 600px;
-    max-height: 200px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
-}
-
-#timerShowdown {
-    background-image: url('../Images/TTTCardTS.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgb(16, 191, 234);
-    max-width: 600px;
-    max-height: 200px;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
-} */
 
 #rushMode {
     background-image: url('../Images/TTTCardRM.png');
