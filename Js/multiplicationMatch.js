@@ -15,8 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Generate multiplication questions and answers
     function generateCards() {
         for (let i = 1; i <= 12; i++) {
-            const answer = i * 2; // Adjusting to have answers from multiplying by 2
-            cardValues.push({ type: 'question', value: `${i} x 2` });
+            const SecNum = Math.floor(Math.random() * 12) + 1; // Generates a random number between 1 and 12
+            const answer = i * SecNum;
+            cardValues.push({ type: 'question', value: `${i} x ${SecNum}` });
             cardValues.push({ type: 'answer', value: answer.toString() });
         }
         shuffleCards();
@@ -65,15 +66,18 @@ document.addEventListener("DOMContentLoaded", () => {
     function flipCard(event) {
         const clickedCard = event.currentTarget;
     
+        // Prevent flipping back matched cards
+        if (clickedCard.classList.contains("matched")) return;
+    
         // If two cards are already flipped, do nothing
         if (flippedCards.length === 2) return;
     
-        // If the clicked card is already flipped, unselect it
+        // If the clicked card is already flipped and not matched, unselect it
         if (flippedCards.includes(clickedCard)) {
             clickedCard.classList.remove("flipped");
             clickedCard.style.backgroundColor = "lightblue"; // Reset color
             flippedCards = flippedCards.filter(card => card !== clickedCard); // Remove from flippedCards array
-            return; // Exit function
+            return;
         }
     
         // Otherwise, flip the card and add it to flippedCards
@@ -88,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
+    
 
     // Check if the two flipped cards match
     function checkMatch() {
@@ -100,21 +105,28 @@ document.addEventListener("DOMContentLoaded", () => {
         const firstIsAnswer = firstCard.dataset.type === "answer";
         const secondIsQuestion = secondCard.dataset.type === "question";
     
-        const firstQuestionValue = firstIsQuestion ? parseInt(firstCard.dataset.value.split(' x ')[0]) * 2 : firstValue;
-        const secondQuestionValue = secondIsQuestion ? parseInt(secondCard.dataset.value.split(' x ')[0]) * 2 : secondValue;
+        // Extract the correct SecNum from the question card
+        const firstQuestionMultiplier = firstIsQuestion ? parseInt(firstCard.dataset.value.split(' x ')[1]) : null;
+        const secondQuestionMultiplier = secondIsQuestion ? parseInt(secondCard.dataset.value.split(' x ')[1]) : null;
+    
+        const firstQuestionValue = firstIsQuestion ? parseInt(firstCard.dataset.value.split(' x ')[0]) * firstQuestionMultiplier : firstValue;
+        const secondQuestionValue = secondIsQuestion ? parseInt(secondCard.dataset.value.split(' x ')[0]) * secondQuestionMultiplier : secondValue;
     
         // Clear "Try again!" message when a new pair is being checked
         document.getElementById("message").textContent = "";
     
-        // Check for a match
         if ((firstIsQuestion && secondIsAnswer && firstQuestionValue === secondValue) ||
             (firstIsAnswer && secondIsQuestion && secondQuestionValue === firstValue)) {
-            
+    
             // Matched!
             matchedCards += 2;
+
+            // Mark cards as matched
+            firstCard.classList.add("matched");
+            secondCard.classList.add("matched");
+
             flippedCards = [];
     
-            // Check if all cards have been matched
             if (matchedCards === cardValues.length) { 
                 setTimeout(() => {
                     document.getElementById("message").textContent = "Congratulations! You've matched all the cards!";
@@ -132,13 +144,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.getElementById("win-screen").classList.add("show");
                 }, 800);
     
-                // Reset the game if the user clicks "Play Again"
                 document.getElementById("play-again-btn").addEventListener("click", () => {
                     document.getElementById("win-screen").classList.remove("show");
                     resetGame();
                 });
             }
-    
         } else {
             // No match, flip them back
             setTimeout(() => {
@@ -150,7 +160,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("message").textContent = "Try again!";
             }, 1000);
         }
-    }    
+    }
+    
 
 
     // Reset the game

@@ -79,6 +79,13 @@ background-image: url('../Images/TTTGameBanner.png');
     box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
 }
 
+#multMatch {
+    background-image: url('../Images/TTTCardMM.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
+}
+
 /* #rushMode {
     background-image: url('../Images/TTTCardRM.png');
     background-size: contain;
@@ -116,6 +123,19 @@ background-image: url('../Images/TTTGameBanner.png');
 
 #timerShowdown {
     background-image: url('../Images/TTTCardTS.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    max-height: none;
+    max-width: 600px;
+    aspect-ratio: 3 / 1; /* Adjusted to better fit the 600x200px shape */
+    background-color: rgb(16, 191, 234);
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.527);
+}
+
+#UConstruction {
+    background-image: url('../Images/TTTCardUConstruction.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
