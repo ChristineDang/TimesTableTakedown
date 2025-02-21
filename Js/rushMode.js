@@ -1,4 +1,3 @@
-// Variables
 let startTime;
 let currentQuestion;
 let questionCount = 0;
@@ -29,13 +28,12 @@ function fire(ratio, opt) {
 
 // Function to generate a random multiplication question
 function generateQuestion() {
-    let num1 = Math.floor(Math.random() * 10) + 1;
-    let num2 = Math.floor(Math.random() * 10) + 1;
+    let num1 = Math.floor(Math.random() * 12) + 1;
+    let num2 = Math.floor(Math.random() * 12) + 1;
     questionElement.textContent = `${num1} x ${num2} = ?`;
     return { num1, num2 };
 }
 
-// Start the test
 function startTest() {
     currentQuestion = generateQuestion();
     questionCount = 0;
@@ -55,7 +53,6 @@ function startTest() {
     resetButton.disabled = false;
 }
 
-// Start the countdown timer
 function startTimer() {
     if (timerStarted) return; // Prevent starting the timer multiple times
 
@@ -77,6 +74,7 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(timerInterval);  // Stop the timer
             endTest();  // End the test and show the final result
+            timerDisplay.textContent = 0;
         }
     }, 100);  // Update every 100 milliseconds
 }
@@ -130,8 +128,6 @@ function updateScoreDisplay() {
     document.getElementById("previousScore").textContent = previousScore !== undefined ? previousScore : 0;  // Will show previous score
 }
 
-
-// Reset the game state
 function resetGame() {
     clearInterval(timerInterval);  // Clear any existing timer
     timerStarted = false;  // Reset the timer start flag
@@ -159,14 +155,14 @@ function resetGame() {
 }
 
 // Handle the visibility toggle of the timer
-showTimerCheckbox.addEventListener("change", function() {
-    if (showTimerCheckbox.checked) {
-        timerElement.style.display = "block";  // Show the timer
-    } else {
-        timerElement.style.display = "none";  // Hide the timer
-        clearInterval(timerInterval);  // Stop the timer if it's hidden
-    }
-});
+// showTimerCheckbox.addEventListener("change", function() {
+//     if (showTimerCheckbox.checked) {
+//         timerElement.style.display = "block";  // Show the timer
+//     } else {
+//         timerElement.style.display = "none";  // Hide the timer
+//         clearInterval(timerInterval);  // Stop the timer if it's hidden
+//     }
+// });
 
 // Listen for the Enter key press to submit the answer
 answerElement.addEventListener("keydown", function(event) {

@@ -43,13 +43,13 @@
     <div class="row">
     
       <div class="col-md-4">
-        <div class="card" id="score">
-          Score: <span id="currentScore">0</span>
+        <div class="card" id="scoreContainer">
+          Current Score: <span id="currentScore">0</span>
         </div>       
       </div>
 
       <div class="col-md-4">
-        <div class="card">
+        <div class="card" id="timerContainer">
           <div id="timer">Timer: <span id="timerDisplay">0.00</span> seconds</div> <!-- Timer initially hidden -->
         </div>
       </div>
@@ -64,8 +64,8 @@
     <br>
 
     <!--Default checked-->
-    <label for="showTimer">Show Timer</label>
-    <input type="checkbox" id="showTimer" checked>
+    <!-- <label for="showTimer">Show Timer</label> -->
+    <!-- <input type="checkbox" id="showTimer" checked> -->
     <br>
 
     <div id="finalResult"></div>
@@ -73,12 +73,14 @@
 
     <div id="result"></div>
     <div id="question"></div>
+    <br>
     <input type="number" id="answer" placeholder="Your answer" autofocus>
     <button id="submit">Submit</button>
     <br>
     <br>
+    <br>
     <div>
-      <button id="reset">Reset</button>
+      <button id="reset">Play Again</button>
     </div>
 
     <br>

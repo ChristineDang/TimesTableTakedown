@@ -29,17 +29,18 @@ html body {
 
 .container {
     background-color: rgba(255, 255, 255, 0.614);
-}
-
-#timer {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    padding-top: 6%;
-    padding-bottom: 8%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-#score {
+#timerContainer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    padding-top: 9.5%;
+    padding-bottom: 10%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#scoreContainer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     padding-top: 8%;
@@ -47,7 +48,8 @@ html body {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-#previousScore {
+
+#previousScoreContainer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     padding-top: 8%;
@@ -81,22 +83,22 @@ html body {
     text-decoration: none;
     outline: none;
     color: #fff; */
-    background-color: #1d74e6;
+    background-color: #00a0c4;
     /* border: none;
     border-radius: 10px; */
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
 
-#submit:hover {background-color: #183aa0}
+#submit:hover {background-color: #006f88}
 
 #submit:active {
-  background-color: #1a5cb8;
+  background-color: #006f88;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
 #reset {
-    width: 100px;
+    width: 150px;
     padding: 10px 15px;
     margin: 0px 20px;
     border-top-right-radius: 10px;
@@ -108,14 +110,14 @@ html body {
     transition: 0.5s;
     color: white;
     font-weight: 700;
-    background-color: #c91400;
+    background-color: #e9388b;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-#reset:hover {background-color: #8c0000}
+#reset:hover {background-color: #ab1364}
 
 #reset:active {
-  background-color: #d30000;
+  background-color: #e9388b;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
@@ -146,9 +148,17 @@ html body {
 }
 
 #question {
-    font-size: 24px;
+    font-size: 50px;
+    font-weight: bolder;
     margin-bottom: 20px;
 }
+
+#result {
+    font-size: 20px;
+    font-weight: bolder; 
+    margin-top: 20px;
+}
+
 #answer {
     font-size: 20px;
     padding: 10px;
@@ -157,9 +167,6 @@ html body {
     font-size: 18px;
     padding: 10px 20px;
     cursor: pointer;
-}
-#result {
-    margin-top: 20px;
 }
 #finalResult {
     font-size: 20px;

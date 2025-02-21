@@ -27,22 +27,61 @@
   </header>
 
 <body>
-    <h1>Timer Showdown</h1>
-    <p>Answer all 20 questions correctly as quickly as possible!</p>
-    
-    <div id="question"></div>
-    <input type="number" id="answer" placeholder="Your answer" autofocus>
-    <button id="submit">Submit Answer</button>
-    
-    <div id="result"></div>
-    <div id="finalResult"></div>
-    
-    <label for="showTimer">Show Timer</label>
-    <input type="checkbox" id="showTimer" checked> <!-- Default is checked -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 id="gameTitle">Timer Showdown</h1>
+        <p>Answer all 20 questions correctly as quickly as possible!</p>
+      </div>
+    </div>
+  </div>
 
-    <div id="timer" style="display: none;">Time: <span id="timerDisplay">0.00</span> seconds</div> <!-- Timer initially hidden -->
-    
-    <button id="reset">Reset Game</button>
+  <br>
+  
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" id="scoreContainer">
+          Current Score: <span id="currentScore">0</span>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" id="timerContainer">
+          <div id="timer">Time: <span id="timerDisplay">0.00</span> seconds</div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card" id="previousScoreContainer">
+          Previous Score: <span id="previousScore">0</span>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <!-- <label for="showTimer">Show Timer</label>
+    <input type="checkbox" id="showTimer" checked> -->
+    <br>
+
+    <div id="finalResult"></div>
+
+    <div id="result"></div>
+    <div id="question"></div>
+    <br>
+    <input type="number" id="answer" placeholder="Your answer" autofocus>
+    <button id="submit">Submit</button>
+    <br>
+    <br>
+    <br>
+    <div>
+      <button id="reset">Play Again</button>
+    </div>
+    <br>
+    <br>
+  </div>
+
 
     <footer>
         <!-- Copyright -->
