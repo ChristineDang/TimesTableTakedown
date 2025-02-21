@@ -14,6 +14,9 @@ let finalResultElement = document.getElementById("finalResult");
 let timerElement = document.getElementById("timer");
 let timerDisplay = document.getElementById("timerDisplay");
 let showTimerCheckbox = document.getElementById("showTimer");
+let previousScore = 0; // Store the previous round's score
+let currentScore = 0;
+// let scoreElement = document.getElementById("score"); // Score display element
 
 //confetti
 function fire(ratio, opt) {
@@ -78,7 +81,6 @@ function startTimer() {
     }, 100);  // Update every 100 milliseconds
 }
 
-// Handle the submit action
 function submitAnswer() {
     let userAnswer = parseInt(answerElement.value, 10);
     let correctAnswer = currentQuestion.num1 * currentQuestion.num2;
@@ -92,45 +94,42 @@ function submitAnswer() {
             startTimer();
         }
 
-        // Show the result for this question
         resultElement.innerHTML = `Correct!`;
 
         // Generate new question and reset input
         currentQuestion = generateQuestion();
         answerElement.value = "";
     } else {
-        // If answer is incorrect, prompt user to try again
         resultElement.innerHTML = "Oops! That's not the correct answer. Try again!";
     }
 }
 
-// End the test and show the result
-function endTest() {
-    finalResultElement.innerHTML = `Time's up! You answered ${correctAnswers} questions correctly in 1 minute.`;
-    submitButton.disabled = true;  // Disable the submit button
-    answerElement.disabled = true;  // Disable the answer input
 
-    fire(.25, {
-        spread: 30,
-        startVelocity: 30
-    });
-    fire(.2, {spread: 30});
-    fire(.35, {
-        spread: 100,
-        decay: .9,
-        scalar: 1
-    });
-    fire(.1, {
-        spread: 140,
-        startVelocity: 15,
-        decay: .92,
-        scalar: 1.2
-    });
-    fire(.2, {
-        spread: 240,
-        startVelocity: 45
-    });
+function endTest() {
+    // Display the score for the current round before resetting
+    finalResultElement.innerHTML = `Time's up! You answered ${correctAnswers} questions correctly in 1 minute.`;
+
+    // Update the score display at the end of the round
+    updateScoreDisplay();
+
+    // Disable the input and submit button
+    submitButton.disabled = true;
+    answerElement.disabled = true;
+
+    // Fire confetti
+    fire(.25, { spread: 30, startVelocity: 30 });
+    fire(.2, { spread: 30 });
+    fire(.35, { spread: 100, decay: .9, scalar: 1 });
+    fire(.1, { spread: 140, startVelocity: 15, decay: .92, scalar: 1.2 });
+    fire(.2, { spread: 240, startVelocity: 45 });
 }
+
+function updateScoreDisplay() {
+    // Update the current score and previous score elements
+    document.getElementById("currentScore").textContent = correctAnswers;  // Will show the updated current score
+    document.getElementById("previousScore").textContent = previousScore !== undefined ? previousScore : 0;  // Will show previous score
+}
+
 
 // Reset the game state
 function resetGame() {
@@ -144,6 +143,16 @@ function resetGame() {
     submitButton.disabled = false;  // Enable submit button
     answerElement.disabled = false;  // Enable answer input
     answerElement.value = "";  // Clear the answer input
+
+    // Save the current score to previousScore for the next round
+    previousScore = correctAnswers;
+
+    // Reset the score for the new round
+    correctAnswers = 0;
+    questionCount = 0;
+
+    // Update the score display at the end of the round
+    updateScoreDisplay();
 
     // Start a new game
     startTest();
