@@ -2,6 +2,7 @@ body {
     font-family: verdana;
     text-align: center;
     background-color: #00bde6;
+    /* background-color: #efefef; */
 }
 
 /* .banner {
@@ -64,10 +65,30 @@ background-image: url('../Images/TTTGameBanner.png');
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
-#bodyContainer {
+/* #bodyContainer {
     padding-left: 5%;
     padding-right: 5%;
     background-color: white;
+} */
+
+.custom-shape-divider-top-1740432366 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1740432366 svg {
+    position: relative;
+    display: block;
+    width: calc(136% + 1.3px);
+    height: 136px;
+}
+
+.custom-shape-divider-top-1740432366 .shape-fill {
+    fill: #00BDE6;
 }
 
 #flipCard {

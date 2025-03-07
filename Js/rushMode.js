@@ -12,7 +12,7 @@ let resetButton = document.getElementById("reset"); // Reset button
 let finalResultElement = document.getElementById("finalResult");
 let timerElement = document.getElementById("timer");
 let timerDisplay = document.getElementById("timerDisplay");
-let showTimerCheckbox = document.getElementById("showTimer");
+// let showTimerCheckbox = document.getElementById("showTimer");
 let previousScore = 0; // Store the previous round's score
 let currentScore = 0;
 // let scoreElement = document.getElementById("score"); // Score display element
@@ -43,11 +43,11 @@ function startTest() {
     timerDisplay.textContent = "60.00";  // Set timer to 60 seconds initially
     
     // Reset and hide timer initially
-    if (showTimerCheckbox.checked) {
-        timerElement.style.display = "block";  // Show the timer
-    } else {
-        timerElement.style.display = "none";  // Hide the timer
-    }
+    // if (showTimerCheckbox.checked) {
+    //     timerElement.style.display = "block";  // Show the timer
+    // } else {
+    //     timerElement.style.display = "none";  // Hide the timer
+    // }
 
     // Disable the reset button while the game is in progress
     resetButton.disabled = false;

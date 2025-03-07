@@ -30,6 +30,7 @@ html body {
 .container {
     background-color: rgba(255, 255, 255, 0.614);
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 20px;
 }
 
 #timerContainer {
@@ -37,14 +38,19 @@ html body {
     font-weight: bold;
     padding-top: 9.5%;
     padding-bottom: 10%;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
 }
+
+.round-time-bar[data-style="smooth"] div {
+    animation: roundtime calc(var(--duration) * 1s) linear forwards;
+  }
 
 #scoreContainer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     padding-top: 8%;
     padding-bottom: 8%;
+    border-radius: 20px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -54,6 +60,7 @@ html body {
     font-weight: bold;
     padding-top: 8%;
     padding-bottom: 8%;
+    border-radius: 20px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -173,6 +180,6 @@ html body {
     font-weight: bold;
 }
 #timer {
-    font-size: 18px;
+    font-size: 32px;
     margin-top: 10px;
 }
