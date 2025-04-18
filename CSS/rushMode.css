@@ -140,7 +140,7 @@ html body {
 }
 
 #homeBtn {
-    background-image: url('../Images/Buttons/TTTHomeBtn.png');
+    background-image: url('../Images/Buttons/TTTHomeBtnV2.png');
     width: 60px;
     height: 60px;
     background-size: contain; /* Ensure the image fits within the button */

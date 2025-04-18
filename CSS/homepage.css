@@ -1,7 +1,9 @@
 body {
     font-family: verdana;
     text-align: center;
-    background-color: #00bde6;
+    background-image: url('../Images/Backgrounds/TTTBkgrndBlank.png');
+    /* background-position: center; */
+    /* background-color: #00bde6; */
     /* background-color: #efefef; */
 }
 
@@ -17,15 +19,12 @@ background-image: url('../Images/TTTGameBanner.png');
 
 } */
 
-.banner {
-    background-image: url('../Images/TTTGameBanner.png');
-    min-height: 650px;
-    background-attachment: fixed; 
+#banner {
+    background-image: url('../Images/Backgrounds/TTTBkgrndBannerV3.png');
+    min-height: 900px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position-x: center;
-    background-position-y: center; 
 }
 
 #bodyContainer {
@@ -41,7 +40,7 @@ background-image: url('../Images/TTTGameBanner.png');
 }
 
 #homeBtn {
-    background-image: url('../Images/Buttons/TTTHomeBtn.png');
+    background-image: url('../Images/Buttons/TTTHomeBtnV2.png');
     width: 60px;
     height: 60px;
     background-size: contain; /* Ensure the image fits within the button */
@@ -180,7 +179,7 @@ background-image: url('../Images/TTTGameBanner.png');
         max-height: none;
     }
 
-    .banner {
+    #banner {
         background-size: cover;
         min-height: 400px;
     }
@@ -198,7 +197,7 @@ background-image: url('../Images/TTTGameBanner.png');
         max-height: none;
     }
 
-    .banner {
+    #banner {
         background-size: cover; 
         min-height: 300px;
     }
@@ -206,7 +205,7 @@ background-image: url('../Images/TTTGameBanner.png');
 
 /* For ultra-wide screens (3072px width) */
 @media (min-width: 3072px) {
-    .banner {
+    #banner {
         background-size: cover;
         background-position: center center;
     }
@@ -214,7 +213,7 @@ background-image: url('../Images/TTTGameBanner.png');
 
 /* For large screens (1920px and above) */
 @media (min-width: 1920px) and (max-width: 3071px) {
-    .banner {
+    #banner {
         background-size: cover;
         background-position: center center;
     }
@@ -222,9 +221,32 @@ background-image: url('../Images/TTTGameBanner.png');
 
 /* For smaller screens (less than 1920px) */
 @media (max-width: 1920px) {
-    .banner {
+    #banner {
         background-size: contain;
         background-position: center center;
     }
 }
 
+/* iPad Pro Landscape (1024px wide) */
+@media (max-width: 1100px) {
+    #banner {
+        min-height: 500px;
+        background-size: cover; /* fills the space better */
+    }
+}
+
+/* iPad Portrait & smaller tablets */
+@media (max-width: 768px) {
+    #banner {
+        min-height: 400px;
+        background-size: cover;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #banner {
+        min-height: 300px;
+        background-size: cover;
+    }
+}
