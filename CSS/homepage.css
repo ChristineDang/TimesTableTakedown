@@ -1,8 +1,11 @@
 body {
     font-family: verdana;
     text-align: center;
-    background-image: url('../Images/Backgrounds/TTTBkgrndBlank.png');
-    /* background-position: center; */
+    /* background-image: url('../Images/Backgrounds/TTTBkgrndBlank.png'); */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent that annoying scrollbar */
+    background-color: #222323;
     /* background-color: #00bde6; */
     /* background-color: #efefef; */
 }
@@ -166,6 +169,60 @@ background-image: url('../Images/TTTGameBanner.png');
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
+/* .bottom-image {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+  } */
+
+  /* .bottom-image-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .bottom-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+  } */
+
+/* Make sure box-sizing is consistent across everything */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  .footer-no-padding {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  .footer-text {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .footer-image-wrapper {
+    width: 100vw;         /* Stretch to viewport width */
+    margin-left: calc(-50vw + 50%); /* Pull it left to cancel padding/margin */
+    overflow: hidden;
+  }
+  
+  .footer-image {
+    width: 100vw;
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+  
+  
+  
+
 @media (max-width: 768px) {
     .card {
         width: 100%;
@@ -203,7 +260,63 @@ background-image: url('../Images/TTTGameBanner.png');
     }
 }
 
-/* For ultra-wide screens (3072px width) */
+/* ----------------------------------
+   iPad Pro & mid-range screens
+   (e.g., 1024px - landscape tablets)
+---------------------------------- */
+@media (max-width: 1100px) {
+    #banner {
+        min-height: 500px;
+        background-size: cover;
+    }
+}
+
+/* ----------------------------------
+   Tablets & portrait iPads (≤768px)
+---------------------------------- */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px 3vw;
+    }
+
+    #rushMode,
+    #timerShowdown {
+        height: auto;
+        max-height: none;
+    }
+
+    #banner {
+        min-height: 400px;
+        background-size: cover;
+    }
+}
+
+/* ----------------------------------
+   Mobile phones (≤480px)
+---------------------------------- */
+@media (max-width: 480px) {
+    .card {
+        aspect-ratio: 16 / 9;
+        padding: 10px 4vw;
+    }
+
+    #rushMode,
+    #timerShowdown {
+        height: auto;
+        max-height: none;
+    }
+
+    #banner {
+        min-height: 300px;
+        background-size: cover;
+    }
+}
+
+/* ----------------------------------
+   Ultra-wide screens (≥3072px)
+---------------------------------- */
 @media (min-width: 3072px) {
     #banner {
         background-size: cover;
@@ -211,7 +324,9 @@ background-image: url('../Images/TTTGameBanner.png');
     }
 }
 
-/* For large screens (1920px and above) */
+/* ----------------------------------
+   Large screens (1920px to 3071px)
+---------------------------------- */
 @media (min-width: 1920px) and (max-width: 3071px) {
     #banner {
         background-size: cover;
@@ -219,34 +334,12 @@ background-image: url('../Images/TTTGameBanner.png');
     }
 }
 
-/* For smaller screens (less than 1920px) */
-@media (max-width: 1920px) {
+/* ----------------------------------
+   Screens smaller than 1920px
+---------------------------------- */
+@media (max-width: 1919px) {
     #banner {
         background-size: contain;
         background-position: center center;
-    }
-}
-
-/* iPad Pro Landscape (1024px wide) */
-@media (max-width: 1100px) {
-    #banner {
-        min-height: 500px;
-        background-size: cover; /* fills the space better */
-    }
-}
-
-/* iPad Portrait & smaller tablets */
-@media (max-width: 768px) {
-    #banner {
-        min-height: 400px;
-        background-size: cover;
-    }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-    #banner {
-        min-height: 300px;
-        background-size: cover;
     }
 }
